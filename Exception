@@ -1,20 +1,29 @@
-import java.util.Scanner;
-
 public class QuotientExceptionDemo {
-
-	public static void main(String[] args) {
-
-		int i = 0;
-
-		do {
-			Scanner input = new Scanner(System.in);
-			System.out.print("Enter numerator integer: ");
-			int numInt = input.nextInt();
-			System.out.println();
-
-			System.out.print("Enter denominator integer: it must not be 0: ");
-			int denoInt = input.nextInt();
-			System.out.println();
-		} while (i < 4);
+public static void main(String[] args) {
+	java.util.Scanner input = new java.util.Scanner(System.in);
+	int num;
+	int den;
+	int result = 0;
+	String response; 
+	do{
+	
+	try{
+	
+	System.out.print("Enter a numerator integer: ");
+	num = input.nextInt();
+	
+	System.out.print("Enter a demominator integer: ");
+	den = input.nextInt();
+	
+	result = num / den;
+	System.out.println(num + "/" + den + " + " + result);
+	
+	}catch(ArithmeticException ae)
+	{
+	System.out.println("You must not enter 0 for demominator. ");
 	}
-}
+	
+	}while(response.toLowerCase().contains("y"));
+	
+	System.out.print("Good bye!!!");
+	
